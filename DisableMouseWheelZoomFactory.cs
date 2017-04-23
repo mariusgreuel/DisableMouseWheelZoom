@@ -4,12 +4,12 @@ using Microsoft.VisualStudio.Utilities;
 
 namespace DisableMouseWheelZoom
 {
-    [Export(typeof(IWpfTextViewCreationListener ))]
+    [Export(typeof(IWpfTextViewCreationListener))]
     [ContentType("text")]
     [TextViewRole(PredefinedTextViewRoles.Zoomable)]
     class ViewCreationListener : IWpfTextViewCreationListener
     {
-        public void  TextViewCreated(IWpfTextView textView)
+        public void TextViewCreated(IWpfTextView textView)
         {
             textView.Options.SetOptionValue(DefaultWpfViewOptions.EnableMouseWheelZoomId, false);
         }
